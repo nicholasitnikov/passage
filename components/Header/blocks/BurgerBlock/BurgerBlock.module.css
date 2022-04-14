@@ -28,6 +28,8 @@
 
 .closeButton {
     background: url('/img/icons/close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
     width: 25px;
     height: 25px;
     border: none;
