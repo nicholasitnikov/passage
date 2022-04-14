@@ -1,0 +1,29 @@
+.ant-slider-track {
+    background-color: black;
+    height: 2px;
+    top: 5px;
+}
+
+.ant-slider-rail {
+    top: 5px;
+    height: 2px;
+}
+
+.ant-slider:hover .ant-slider-track {
+    background-color: black;
+}
+
+.ant-slider-handle {
+    background-color: black;
+    border: none;
+}
+
+.ant-slider-handle:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.ant-select-item-option-selected {
+    background: black !important;
+    color: white !important;
+}

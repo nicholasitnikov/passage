@@ -1,0 +1,21 @@
+.buttonsGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 5px;
+    padding-bottom: 10px;
+}
+
+/* .track {
+    height: 100%;
+    width: 2px;
+    background-color: red;
+    position: absolute;
+    right: 0;
+} */
+
+.thumb {
+    width: 2px;
+    height: 10px;
+    position: absolute;
+    background-color: red;
+}

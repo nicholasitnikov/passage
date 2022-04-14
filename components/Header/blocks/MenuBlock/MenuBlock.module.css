@@ -1,0 +1,109 @@
+.container {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    padding: 10px 50px;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+    overflow-x: scroll;
+}
+
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menuItem {
+    list-style: none;
+}
+
+.menuLink {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.promo {
+    color: goldenrod;
+}
+
+.menuLink:hover {
+    opacity: 0.6;
+    color: black;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: 100vw;
+        position: relative;
+        transition: all 0.5s;
+    }
+    .menu {
+        overflow-x: scroll;
+        justify-content: flex-start;
+        padding: 10px 30px;
+        position: relative;
+        user-select: none;
+    }
+
+    .container::after {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        content: '';
+        right: 0;
+        height: 100%;
+        height: 40px;
+        width: 200px;
+        top: 0;
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    .container::before {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+            -90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        content: '';
+        left: 0;
+        height: 100%;
+        height: 40px;
+        width: 200px;
+        top: 0;
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.5s;
+        z-index: 2;
+    }
+
+    .containerWithLeftGradient::before {
+        opacity: 1;
+    }
+
+    .containerWithRightGradient::after {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        display: none;
+    }
+}

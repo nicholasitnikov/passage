@@ -1,0 +1,14 @@
+.dropdown {
+    /* background-color: red; */
+    box-shadow: none;
+    padding: 0;
+    border: 1px solid #f4f4f4;
+}
+
+.option:hover {
+    background-color: #f1f1f1;
+}
+
+/* .select {
+    padding: 0 !important;
+} */

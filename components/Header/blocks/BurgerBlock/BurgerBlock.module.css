@@ -1,0 +1,60 @@
+.container {
+    position: fixed;
+    height: 100vh;
+    background: white;
+    z-index: 4;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    justify-content: flex-start;
+    margin-top: 50px;
+    text-align: center;
+    padding: 0;
+    height: 100%;
+}
+
+.closeButton {
+    background: url('/img/icons/close.svg');
+    width: 25px;
+    height: 25px;
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.closeButton:hover {
+    opacity: 0.5;
+}
+
+.menuItem {
+    list-style: none;
+}
+
+.menuLink:hover {
+    opacity: 0.6;
+    color: black;
+}
+
+.menuLink {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}

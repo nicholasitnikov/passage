@@ -1,0 +1,8 @@
+.checkboxGroup {
+    padding-bottom: 10px;
+}
+
+.checkboxGroupTwoColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

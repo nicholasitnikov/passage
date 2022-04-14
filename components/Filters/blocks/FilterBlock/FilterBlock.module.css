@@ -1,0 +1,36 @@
+.filterBlock {
+    border-bottom: 1px solid #f3f3f3;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.filterBlock:first-of-type {
+    margin-top: 0;
+}
+
+.heading {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.arrow {
+    background: url('/img/icons/open.svg');
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.header:hover {
+    opacity: 0.75;
+}

@@ -1,0 +1,31 @@
+.input {
+    width: 100%;
+    padding: 9px 10px 7px;
+    appearance: none;
+    border: 1px solid #f3f3f3;
+    position: relative;
+    outline: none;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: black;
+}
+
+.inputContainer {
+    position: relative;
+    padding: 0;
+    border: none;
+}
+
+.inputContainer::after {
+    content: '';
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 14px;
+    top: 11px;
+    background: url('/img/icons/search.svg');
+}

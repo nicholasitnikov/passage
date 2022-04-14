@@ -1,0 +1,45 @@
+.header {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    margin: 5px 0;
+}
+
+.burger {
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+    .header {
+        margin-bottom: 0px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .conterBurger {
+        width: 20px;
+        height: 20px;
+    }
+    .burger {
+        width: 20px;
+        height: 20px;
+        display: block;
+        border: none;
+        background-repeat: no-repeat;
+        background: url('/img/icons/menu.svg');
+        cursor: pointer;
+        transition: opacity 0.3s;
+    }
+    .burger:hover {
+        opacity: 0.5;
+    }
+}
