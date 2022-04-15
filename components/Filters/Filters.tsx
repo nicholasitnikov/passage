@@ -10,7 +10,7 @@ import styles from './Filters.module.css';
 const Filters = () => {
     const { visible } = useAppSelector((store) => store.filters);
     const dispatch = useAppDispatch();
-    const { width } = useSize();
+    const { width, height } = useSize();
 
     const { filters, selectedFilters } = useAppSelector(
         (store) => store.filters
@@ -64,9 +64,7 @@ const Filters = () => {
                 className={styles.closeButton}
             ></motion.button>
             <motion.div
-                animate={{
-                    opacity: visible ? 1 : 0,
-                }}
+                style={{ opacity: visible ? 1 : 0 }}
                 className={styles.overlay}
             ></motion.div>
             <motion.div
@@ -76,7 +74,12 @@ const Filters = () => {
                 className={styles.filtersContainer}
             >
                 <SimpleBar style={{ width: '100%', height: '100%' }}>
-                    <aside className={styles.filters}>{renderFilters}</aside>
+                    <aside
+                        className={styles.filters}
+                        style={{ minHeight: `${height}px` }}
+                    >
+                        {renderFilters}
+                    </aside>
                 </SimpleBar>
             </motion.div>
         </>

@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import { useEffect } from 'react';
 import Filters from '../components/Filters/Filters';
 import Header from '../components/Header/Header/Header';
 import Products from '../components/Products/Products';
