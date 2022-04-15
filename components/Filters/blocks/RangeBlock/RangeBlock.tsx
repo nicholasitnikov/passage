@@ -14,20 +14,19 @@ const RangeBlock = () => {
     const { selectedFilters } = useAppSelector((store) => store.filters);
     const dispatch = useAppDispatch();
 
+    const updateHandler = () => {
+        dispatch(updateFilter(`Цена: от ${values.min}000 до ${values.max}000`));
+        animationStartedRef.current = true;
+        dispatch(startLoading());
+        dispatch(setRandomFilter());
+        setInterval(() => {
+            dispatch(endLoading());
+            animationStartedRef.current = false;
+        }, 1500);
+    };
+
     const animationStartedRef = useRef(false);
     const handleChange = (val: [number, number]) => {
-        dispatch(updateFilter(`Цена: от ${val[0]}000 до ${val[1]}000`));
-        if (!animationStartedRef.current) {
-            console.log('hello');
-            animationStartedRef.current = true;
-            dispatch(startLoading());
-            dispatch(setRandomFilter());
-            setInterval(() => {
-                dispatch(endLoading());
-                animationStartedRef.current = false;
-            }, 1500);
-        }
-
         setValues({ ...values, min: val[0], max: val[1] });
     };
 
@@ -38,7 +37,11 @@ const RangeBlock = () => {
     }, [selectedFilters]);
 
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            onMouseUp={updateHandler}
+            onTouchEnd={updateHandler}
+        >
             <Slider
                 onChange={handleChange}
                 tooltipVisible={false}

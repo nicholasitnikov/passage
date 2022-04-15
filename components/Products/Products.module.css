@@ -76,6 +76,10 @@
     .filterButton {
         display: block;
     }
+    .productsInactive {
+        pointer-events: none;
+        overflow: hidden;
+    }
 }
 
 @media screen and (max-width: 540px) {

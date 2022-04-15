@@ -46,17 +46,24 @@ const ProductBlock: FC<IProductBlock> = ({ images, index }) => {
                 }}
                 onMouseLeave={() => firstImage()}
             />
-            <div className={styles.headingContainer}>
-                <h3 className={styles.heading}>
-                    Gucci Interlocking GG print tee
-                </h3>
-            </div>
-            <div className={styles.info}>
-                <span className={styles.category}>Мужские футболки</span>
-                <p className={styles.price}>29 900 руб.</p>
-                <p className={styles.discount}>22 500 руб.</p>
-                <a className={styles.link}>Подробнее</a>
-                <button className={styles.addtocart}></button>
+            <div className={styles.infoContainer}>
+                <div className={styles.headingContainer}>
+                    <h3 className={styles.heading}>
+                        Gucci Interlocking GG print tee
+                    </h3>
+                </div>
+                <div className={styles.info}>
+                    <span className={styles.category}>Мужские футболки</span>
+                    <p className={index < 2 ? styles.oldPrice : styles.price}>
+                        29 900 руб.
+                    </p>
+
+                    {index < 2 && (
+                        <p className={styles.discount}>22 500 руб.</p>
+                    )}
+                    <a className={styles.link}>Подробнее</a>
+                    <button className={styles.addtocart}></button>
+                </div>
             </div>
         </motion.article>
     );

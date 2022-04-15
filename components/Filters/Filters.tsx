@@ -48,13 +48,19 @@ const Filters = () => {
         console.log(request);
     }, [filters, selectedFilters]);
 
+    useEffect(() => {
+        if (visible) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [visible]);
+
     return (
         <>
             <motion.button
                 onClick={() => dispatch(hide())}
-                animate={{
-                    right: visible ? '0px' : '-40px',
-                }}
+                style={{ right: visible ? '0px' : '-40px' }}
                 className={styles.closeButton}
             ></motion.button>
             <motion.div
@@ -64,8 +70,8 @@ const Filters = () => {
                 className={styles.overlay}
             ></motion.div>
             <motion.div
-                animate={{
-                    left: visible ? '0px' : width >= 900 ? '0px' : '-280px',
+                style={{
+                    left: visible ? '0px' : width > 900 ? '0px' : '-280px',
                 }}
                 className={styles.filtersContainer}
             >

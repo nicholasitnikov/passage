@@ -5,9 +5,17 @@
     align-self: stretch;
 }
 
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
 .info {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .image {
@@ -28,12 +36,16 @@
 
 .headingContainer {
     flex-grow: 1;
-    /* background: red; */
     display: flex;
-    align-items: flex-end;
 }
 
 .price {
+    line-height: 12px;
+    margin: 3px 0 15px;
+    width: 100%;
+}
+
+.oldPrice {
     width: 100%;
     margin: 0;
     font-size: 12px;
@@ -63,6 +75,7 @@
     margin-right: 15px;
     transition: opacity 0.2s;
     position: relative;
+    flex-grow: 1;
 }
 
 .link::after {

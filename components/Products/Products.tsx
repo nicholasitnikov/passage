@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { useSize } from '../../hooks/useSize';
 import { show } from '../../store/slices/filtersSlice';
 import SortItemBlock from '../FiltersBar/blocks/SortItemBlock/SortItemBlock';
 import FilterBar from '../FiltersBar/FilterBar';
@@ -11,6 +12,9 @@ const Products = () => {
     const { products, filteredProducts } = useAppSelector(
         (store) => store.products
     );
+
+    const { visible } = useAppSelector((store) => store.filters);
+    const { width } = useSize();
 
     const renderProducts = useMemo(() => {
         if (filteredProducts.length > 0) {
@@ -25,7 +29,11 @@ const Products = () => {
     }, [products, filteredProducts]);
 
     return (
-        <section className={styles.products}>
+        <section
+            className={`${styles.products} ${
+                width <= 900 && visible && styles.productsInactive
+            }`}
+        >
             <div className={styles.header}>
                 <div className={styles.headingContainer}>
                     <h4 className={styles.heading}>234 products</h4>
